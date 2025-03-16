@@ -1,0 +1,14 @@
+{
+  "name": "introduction_routes_express",
+  "version": "1.0.0",
+  "description": "aprendendo rotas com express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Felipe Biava Favarin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
