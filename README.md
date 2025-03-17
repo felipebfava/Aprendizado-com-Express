@@ -1,4 +1,5 @@
 Como Rodar o Projeto Baixado
+
 Instalar todas as dependências indicada pelo package.json
 ```js
 npm install
@@ -11,6 +12,7 @@ node index.js
 
 
 Sequência Para Criar o Projeto
+
 Criar o arquivo package
 ```js
 npm init
