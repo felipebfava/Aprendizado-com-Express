@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+  }
+  
+  section {
+    /*Adicionado*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  h2 {
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+  }
+  
+  div[id$="-messages"] {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    min-height: 40px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #333;
+    word-wrap: break-word;
+  }
+  
+  input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  }
+  
+  button {
+    padding: 8px 15px;
+    margin: 5px 5px 0 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:active {
+    background-color: #004085;
+  }
+  
+  /*Adicionado*/
+  .product-image {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Estilizando a lista de pedidos */
+  #polling-messages ul {
+    list-style: none; /* Remove os pontos da lista */
+    padding: 0;
+    margin: 0;
+  }
+
+  #polling-messages li {
+    background-color: #007bff; /* Azul forte */
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  #polling-messages li:hover {
+    transform: scale(1.05); /* Pequeno efeito de crescimento ao passar o mouse */
+  }
+
+  
+  @media (max-width: 600px) {
+    section {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.5em;
+    }
+  
+    h2 {
+      font-size: 1.2em;
+    }
+  
+    button {
+      width: 100%;
+      margin: 5px 0;
+    }
+  
+    input[type="text"] {
+      width: 100%;
+    }
+  }
+  

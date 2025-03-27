@@ -1,0 +1,28 @@
+<!-- 4.Notificações de Novos Pedidos em um Restaurante usando HTTP Polling -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante com Polling</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Exemplo de Polling</h1>
+
+    <!-- HTTP Polling -->
+    <section>
+      <h2>Notificação de Pedidos</h2>
+      <img src="./fotos/paoComOvo.png" alt="Imagem do Produto" class="product-image">
+      <div id="polling-messages">
+        <h3>Pedidos Recentes:</h3>
+        <ul></ul> <!-- A lista será preenchida pelo JavaScript -->
+      </div>
+      <input type="text" id="polling-input" placeholder="Adicionais" />
+      <button onclick="sendPollingMessage()">Enviar Pedido</button>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
