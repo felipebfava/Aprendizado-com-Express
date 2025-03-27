@@ -1,6 +1,6 @@
 Após fazer um git clone de todo o repositório
 ```js
-git clone https://github.com/felipebfava/Aprendizado-com-Express/
+git clone https://github.com/felipebfava/Aprendizado-com-Express.git
 ```
 
 Separe o arquivo correspondente que queira executar.
