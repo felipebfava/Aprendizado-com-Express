@@ -1,0 +1,66 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance</title>
+</head>
+<body>
+  <h1>Chamada</h1>
+  <button id="start">Iniciar Chamada</button>
+
+  <ul id="studentsList"></ul>
+
+  <script>
+    const studentsList = document.getElementById('studentsList');
+    const eventSource = new EventSource('/sse');
+
+    eventSource.onmessage = function(event) {
+      console.log("Recebeu novos dados");
+      console.log(event);
+      
+      
+      const data = JSON.parse(event.data);
+      updateStudentsList(data.presentStudents);
+    };
+
+    function updateStudentsList(students) {
+      studentsList.innerHTML = '';
+      students.forEach(student => {
+        let label = document.createElement('label');
+        label.setAttribute('for', student.name);
+        label.textContent = student.name;
+        label.style.display = 'block';
+        
+        label.innerHTML = `<input type="checkbox" id="${student.name}" name="${student.name}" ${student.present && "checked"}>${student.name}`;
+        label.addEventListener('change', function(event) {
+          fetch('/markAttendance', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `name=${student.name}&present=${event.target.checked}`,
+          });
+        });
+        studentsList.appendChild(label);
+      });
+    }
+
+    document.getElementById('start').addEventListener('click', startAttendance);
+    function startAttendance() {
+      fetch('/reset', {
+        method: 'POST',
+      });
+    }
+
+    // Fetch initial student list
+    fetch('/students')
+      .then(response => response.json())
+      .then(data => {
+        updateStudentsList(data.students);
+      });
+  </script>
+</body>
+</html>
